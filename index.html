@@ -89,17 +89,18 @@
 		}
 
 		/* Navigation */
-		main > input[type=radio] {
-			position: absolute;
-			left: -9999px;
-		}
-		nav label {
+		nav a {
 			display: block;
 			color: var(--theme-link);
-			cursor: pointer;
 		}
-		article {display: none}
-		input:checked + article {display: block}
+		main > article:target ~ article:last-child,
+		main > article {
+			display: none;
+		}
+		main > :last-child,
+		main > article:target {
+			display: block;
+		}
 
 		/* Grid. */
 		main {
@@ -243,19 +244,12 @@
 <div class="logo"><svg class="glyph" version="1.1" viewBox="0 0 6 11" height="11" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M 1,2 V 3 H 0 V 6 H 1 V 9 H 2 V 8 H 3 V 9 H 4 V 6 H 5 V 3 H 4 V 2 H 3 V 3 H 2 V 2 Z M 1,4 H 2 V 5 H 1 Z M 3,4 H 4 V 5 H 3 Z"/></svg></div>
 <header>Anaminus<span class="cursor"/></header>
 <nav>
-	<label for="landing">Landing</label>
-	<label for="projects">Projects</label>
-	<label for="social">Social</label>
+	<a href="#landing">Landing</a>
+	<a href="#projects">Projects</a>
+	<a href="#social">Social</a>
 </nav>
 
-<input type="radio" name="nav" value="landing" id="landing" checked></input>
-<article>
-<p>You've finally landed.</p>
-<p>Enjoy your stay.</p>
-</article>
-
-<input type="radio" name="nav" value="projects" id="projects"></input>
-<article class="scrollable">
+<article id="projects" class="scrollable">
 <h2>Projects</h2>
 <p>Active</p>
 <ul>
@@ -277,8 +271,7 @@
 </ul>
 </article>
 
-<input type="radio" name="nav" value="social" id="social"></input>
-<article>
+<article id="social">
 <h2>Social</h2>
 <ul>
 	<li><a href="https://github.com/Anaminus">GitHub</a></li>
@@ -288,6 +281,12 @@
 </ul>
 </article>
 
+<article id="#landing">
+<p>You've finally landed.</p>
+<p>Enjoy your stay.</p>
+</article>
+
 </main>
 </body>
 </html>
+
