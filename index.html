@@ -79,7 +79,7 @@
 		a {
 			color: var(--theme-link);
 		}
-		header {
+		header, div.logo {
 			font-size: 2em;
 			text-align: center;
 		}
@@ -105,24 +105,18 @@
 		main {
 			display: grid;
 			grid-template-areas:
-				"header  header"
-				"article nav";
-			grid-template-columns: 1fr auto;
-			grid-template-rows: auto 1fr;
+				"logo    header  header"
+				"article article nav";
+			grid-template-columns: auto 1fr auto;
+			grid-template-rows: 2em 1fr;
 			grid-auto-rows: 0;
 			grid-auto-columns: 0;
 			gap: var(--gap);
 		}
-		header {
-			grid-area: header;
-			grid-row: 1;
-		}
-		article {
-			grid-area: article;
-		}
-		nav {
-			grid-area: nav;
-		}
+		div.logo {grid-area: logo}
+		header {grid-area: header}
+		article {grid-area: article}
+		nav {grid-area: nav}
 
 		/* Blinking cursor. */
 		.cursor::after {
@@ -146,9 +140,9 @@
 		}
 
 		svg.glyph {
-			width: 1ch;
+			display: inline;
+			width: 1em;
 			height: 1em;
-			vertical-align: text-bottom;
 		}
 		svg.glyph path {
 			fill: var(--theme-fg);
@@ -246,7 +240,8 @@
 </head>
 <body>
 <main>
-<header><svg class="glyph" version="1.1" viewBox="0 0 6 11" height="11" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M 1,2 V 3 H 0 V 6 H 1 V 9 H 2 V 8 H 3 V 9 H 4 V 6 H 5 V 3 H 4 V 2 H 3 V 3 H 2 V 2 Z M 1,4 H 2 V 5 H 1 Z M 3,4 H 4 V 5 H 3 Z"/></svg>Anaminus<span class="cursor"/></header>
+<div class="logo"><svg class="glyph" version="1.1" viewBox="0 0 6 11" height="11" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M 1,2 V 3 H 0 V 6 H 1 V 9 H 2 V 8 H 3 V 9 H 4 V 6 H 5 V 3 H 4 V 2 H 3 V 3 H 2 V 2 Z M 1,4 H 2 V 5 H 1 Z M 3,4 H 4 V 5 H 3 Z"/></svg></div>
+<header>Anaminus<span class="cursor"/></header>
 <nav>
 	<label for="landing">Landing</label>
 	<label for="projects">Projects</label>
