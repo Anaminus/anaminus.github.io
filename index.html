@@ -101,6 +101,25 @@
 		main > article:target {
 			display: block;
 		}
+		main > article.paged:target {
+			display: grid;
+		}
+
+		/* Paged */
+		.paged {
+			grid-template-areas:
+				"page page"
+				"prev next";
+			grid-template-columns: 1fr auto;
+			grid-template-rows: 1fr auto;
+			grid-auto-rows: 0;
+			grid-auto-columns: 0;
+		}
+		.page {grid-area: page}
+		.prev {grid-area: prev}
+		.next {grid-area: next}
+		.prev > a::before {content:"<< "}
+		.next > a::after {content:" >>"}
 
 		/* Grid. */
 		main {
@@ -249,27 +268,54 @@
 	<a href="#social">Social</a>
 </nav>
 
-<article id="projects" class="scrollable">
+<article id="projects" class="paged"><div class="page">
 <h2>Projects</h2>
-<p>Active</p>
 <ul>
-	<li><a href="https://anaminus.github.io/blog/">Blog</a>
-	<p>A writing outlet.</p>
-	</li>
 	<li><a href="https://github.com/Anaminus/rbxmk">rbxmk</a>
-	<p>A command-line tool for manipulating Roblox files.</p>
+		<p>A command-line tool for manipulating Roblox files.</p>
 	</li>
 	<li><a href="https://robloxapi.github.io/ref/">Roblox API Reference</a>
-	<p>A quick and accessible reference for the Roblox Lua API.</p>
+		<p>A quick and accessible reference for the Roblox Lua API.</p>
 	</li>
 </ul>
-<p>Other</p>
+</div><div class="next"><a href="#projects-1">Next</a></div></article>
+
+<article id="projects-1" class="paged"><div class="page">
+<h2>Projects</h2>
 <ul>
-	<li><a href="https://github.com/RobloxAPI">Roblox API Group</a>
-	<p>Various goodies related to the Roblox Lua API.</p>
+	<li><a href="https://github.com/Anaminus/roblox-library">Roblox library</a>
+		<p>A collection of Roblox modules, scripts, and snippets.</p>
+	</li>
+	<li><a href="https://github.com/RobloxAPI/rbxfile">rbxfile</a>
+		<p>Roblox file parser in Go.</p>
+	</li>
+	<li><a href="https://github.com/RobloxAPI/spec">spec</a>
+		<p>Roblox file format specifications.</p>
 	</li>
 </ul>
-</article>
+</div><div class="prev"><a href="#projects">Prev</a></div><div class="next"><a href="#projects-2">Next</a></div></article>
+
+<article id="projects-2" class="paged"><div class="page">
+<h2>Projects</h2>
+<p>Roblox Studio plugins:</p>
+<ul>
+	<li><a href="https://www.roblox.com/library/184216383/HotSwap-v2-0-1">HotSwap</a>
+		<p>Run scripts as plugins.</p>
+	</li>
+	<li><a href="https://devforum.roblox.com/t/nudge-cell-quickly-adjust-terrain-cell-occupancy/1211687">Nudge Cell</a>
+		<p>Quickly adjust terrain occupancy.</p>
+	</li>
+</ul>
+</div><div class="prev"><a href="#projects-1">Prev</a></div><div class="next"><a href="#projects-3">Next</a></div></article>
+
+<article id="projects-3" class="paged"><div class="page">
+<h2>Projects</h2>
+<ul>
+	<li><a href="https://anaminus.github.io/blog/">Blog</a>
+		<p>A writing outlet.</p>
+	</li>
+</ul>
+</div><div class="prev"><a href="#projects-2">Prev</a></div></article>
 
 <article id="social">
 <h2>Social</h2>
