@@ -13,6 +13,8 @@
 			--theme-mg:   #888;
 			--theme-link: #0FF;
 			--theme-2:    #222;
+			--theme-sfg:  #000;
+			--theme-sbg:  #FFF;
 		}
 	</style>
 
@@ -55,6 +57,10 @@
 		html, body {
 			background-color: var(--theme-bg);
 			color: var(--theme-fg);
+		}
+		::selection {
+			background-color: var(--theme-sbg);
+			color: var(--theme-sfg);
 		}
 		main {
 			/* Outer vignette */
