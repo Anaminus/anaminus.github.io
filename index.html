@@ -213,61 +213,61 @@
 		}
 
 		/* Scale viewport by integer amount based on screen size. */
-		/*     (min-width: S*240px) and (min-height:S*160px) {main{scale:  S}} */
-		@media (min-width:   240px) and (min-height:  160px) {main{scale:  1}}
-		@media (min-width:   480px) and (min-height:  320px) {main{scale:  2}}
-		@media (min-width:   720px) and (min-height:  480px) {main{scale:  3}}
-		@media (min-width:   960px) and (min-height:  640px) {main{scale:  4}}
-		@media (min-width:  1200px) and (min-height:  800px) {main{scale:  5}}
-		@media (min-width:  1440px) and (min-height:  960px) {main{scale:  6}}
-		@media (min-width:  1680px) and (min-height: 1120px) {main{scale:  7}}
-		@media (min-width:  1920px) and (min-height: 1280px) {main{scale:  8}}
-		@media (min-width:  2160px) and (min-height: 1440px) {main{scale:  9}}
-		@media (min-width:  2400px) and (min-height: 1600px) {main{scale: 10}}
-		@media (min-width:  2640px) and (min-height: 1760px) {main{scale: 11}}
-		@media (min-width:  2880px) and (min-height: 1920px) {main{scale: 12}}
-		@media (min-width:  3120px) and (min-height: 2080px) {main{scale: 13}}
-		@media (min-width:  3360px) and (min-height: 2240px) {main{scale: 14}}
-		@media (min-width:  3600px) and (min-height: 2400px) {main{scale: 15}}
-		@media (min-width:  3840px) and (min-height: 2560px) {main{scale: 16}}
-		@media (min-width:  4080px) and (min-height: 2720px) {main{scale: 17}}
-		@media (min-width:  4320px) and (min-height: 2880px) {main{scale: 18}}
-		@media (min-width:  4560px) and (min-height: 3040px) {main{scale: 19}}
-		@media (min-width:  4800px) and (min-height: 3200px) {main{scale: 20}}
-		@media (min-width:  5040px) and (min-height: 3360px) {main{scale: 21}}
-		@media (min-width:  5280px) and (min-height: 3520px) {main{scale: 22}}
-		@media (min-width:  5520px) and (min-height: 3680px) {main{scale: 23}}
-		@media (min-width:  5760px) and (min-height: 3840px) {main{scale: 24}}
-		@media (min-width:  6000px) and (min-height: 4000px) {main{scale: 25}}
-		@media (min-width:  6240px) and (min-height: 4160px) {main{scale: 26}}
-		@media (min-width:  6480px) and (min-height: 4320px) {main{scale: 27}}
-		@media (min-width:  6720px) and (min-height: 4480px) {main{scale: 28}}
-		@media (min-width:  6960px) and (min-height: 4640px) {main{scale: 29}}
-		@media (min-width:  7200px) and (min-height: 4800px) {main{scale: 30}}
-		@media (min-width:  7440px) and (min-height: 4960px) {main{scale: 31}}
-		@media (min-width:  7680px) and (min-height: 5120px) {main{scale: 32}}
-		@media (min-width:  7920px) and (min-height: 5280px) {main{scale: 33}}
-		@media (min-width:  8160px) and (min-height: 5440px) {main{scale: 34}}
-		@media (min-width:  8400px) and (min-height: 5600px) {main{scale: 35}}
-		@media (min-width:  8640px) and (min-height: 5760px) {main{scale: 36}}
-		@media (min-width:  8880px) and (min-height: 5920px) {main{scale: 37}}
-		@media (min-width:  9120px) and (min-height: 6080px) {main{scale: 38}}
-		@media (min-width:  9360px) and (min-height: 6240px) {main{scale: 39}}
-		@media (min-width:  9600px) and (min-height: 6400px) {main{scale: 40}}
-		@media (min-width:  9840px) and (min-height: 6560px) {main{scale: 41}}
-		@media (min-width: 10080px) and (min-height: 6720px) {main{scale: 42}}
-		@media (min-width: 10320px) and (min-height: 6880px) {main{scale: 43}}
-		@media (min-width: 10560px) and (min-height: 7040px) {main{scale: 44}}
-		@media (min-width: 10800px) and (min-height: 7200px) {main{scale: 45}}
-		@media (min-width: 11040px) and (min-height: 7360px) {main{scale: 46}}
-		@media (min-width: 11280px) and (min-height: 7520px) {main{scale: 47}}
-		@media (min-width: 11520px) and (min-height: 7680px) {main{scale: 48}}
-		@media (min-width: 11760px) and (min-height: 7840px) {main{scale: 49}}
-		@media (min-width: 12000px) and (min-height: 8000px) {main{scale: 50}}
-		@media (min-width: 12240px) and (min-height: 8160px) {main{scale: 51}}
+		/*     (min-width: S*240px) and (min-height:S*160px) {main{transform:scale( S)}} */
+		@media (min-width:   240px) and (min-height:  160px) {main{transform:scale( 1)}}
+		@media (min-width:   480px) and (min-height:  320px) {main{transform:scale( 2)}}
+		@media (min-width:   720px) and (min-height:  480px) {main{transform:scale( 3)}}
+		@media (min-width:   960px) and (min-height:  640px) {main{transform:scale( 4)}}
+		@media (min-width:  1200px) and (min-height:  800px) {main{transform:scale( 5)}}
+		@media (min-width:  1440px) and (min-height:  960px) {main{transform:scale( 6)}}
+		@media (min-width:  1680px) and (min-height: 1120px) {main{transform:scale( 7)}}
+		@media (min-width:  1920px) and (min-height: 1280px) {main{transform:scale( 8)}}
+		@media (min-width:  2160px) and (min-height: 1440px) {main{transform:scale( 9)}}
+		@media (min-width:  2400px) and (min-height: 1600px) {main{transform:scale(10)}}
+		@media (min-width:  2640px) and (min-height: 1760px) {main{transform:scale(11)}}
+		@media (min-width:  2880px) and (min-height: 1920px) {main{transform:scale(12)}}
+		@media (min-width:  3120px) and (min-height: 2080px) {main{transform:scale(13)}}
+		@media (min-width:  3360px) and (min-height: 2240px) {main{transform:scale(14)}}
+		@media (min-width:  3600px) and (min-height: 2400px) {main{transform:scale(15)}}
+		@media (min-width:  3840px) and (min-height: 2560px) {main{transform:scale(16)}}
+		@media (min-width:  4080px) and (min-height: 2720px) {main{transform:scale(17)}}
+		@media (min-width:  4320px) and (min-height: 2880px) {main{transform:scale(18)}}
+		@media (min-width:  4560px) and (min-height: 3040px) {main{transform:scale(19)}}
+		@media (min-width:  4800px) and (min-height: 3200px) {main{transform:scale(20)}}
+		@media (min-width:  5040px) and (min-height: 3360px) {main{transform:scale(21)}}
+		@media (min-width:  5280px) and (min-height: 3520px) {main{transform:scale(22)}}
+		@media (min-width:  5520px) and (min-height: 3680px) {main{transform:scale(23)}}
+		@media (min-width:  5760px) and (min-height: 3840px) {main{transform:scale(24)}}
+		@media (min-width:  6000px) and (min-height: 4000px) {main{transform:scale(25)}}
+		@media (min-width:  6240px) and (min-height: 4160px) {main{transform:scale(26)}}
+		@media (min-width:  6480px) and (min-height: 4320px) {main{transform:scale(27)}}
+		@media (min-width:  6720px) and (min-height: 4480px) {main{transform:scale(28)}}
+		@media (min-width:  6960px) and (min-height: 4640px) {main{transform:scale(29)}}
+		@media (min-width:  7200px) and (min-height: 4800px) {main{transform:scale(30)}}
+		@media (min-width:  7440px) and (min-height: 4960px) {main{transform:scale(31)}}
+		@media (min-width:  7680px) and (min-height: 5120px) {main{transform:scale(32)}}
+		@media (min-width:  7920px) and (min-height: 5280px) {main{transform:scale(33)}}
+		@media (min-width:  8160px) and (min-height: 5440px) {main{transform:scale(34)}}
+		@media (min-width:  8400px) and (min-height: 5600px) {main{transform:scale(35)}}
+		@media (min-width:  8640px) and (min-height: 5760px) {main{transform:scale(36)}}
+		@media (min-width:  8880px) and (min-height: 5920px) {main{transform:scale(37)}}
+		@media (min-width:  9120px) and (min-height: 6080px) {main{transform:scale(38)}}
+		@media (min-width:  9360px) and (min-height: 6240px) {main{transform:scale(39)}}
+		@media (min-width:  9600px) and (min-height: 6400px) {main{transform:scale(40)}}
+		@media (min-width:  9840px) and (min-height: 6560px) {main{transform:scale(41)}}
+		@media (min-width: 10080px) and (min-height: 6720px) {main{transform:scale(42)}}
+		@media (min-width: 10320px) and (min-height: 6880px) {main{transform:scale(43)}}
+		@media (min-width: 10560px) and (min-height: 7040px) {main{transform:scale(44)}}
+		@media (min-width: 10800px) and (min-height: 7200px) {main{transform:scale(45)}}
+		@media (min-width: 11040px) and (min-height: 7360px) {main{transform:scale(46)}}
+		@media (min-width: 11280px) and (min-height: 7520px) {main{transform:scale(47)}}
+		@media (min-width: 11520px) and (min-height: 7680px) {main{transform:scale(48)}}
+		@media (min-width: 11760px) and (min-height: 7840px) {main{transform:scale(49)}}
+		@media (min-width: 12000px) and (min-height: 8000px) {main{transform:scale(50)}}
+		@media (min-width: 12240px) and (min-height: 8160px) {main{transform:scale(51)}}
 
 		/* Animated scaling. */
-		main { transition: scale 100ms linear }
+		main { transition: transform 100ms linear }
 		@media (prefers-reduced-motion) {
 			main { transition: unset }
 		}
