@@ -5,42 +5,52 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Anaminus</title>
-	<!-- Theme -->
-	<style>
-		:root {
-			--theme-fg:   #FFF;
-			--theme-bg:   #000;
-			--theme-link: #aea;
-			--theme-sfg:  #000;
-			--theme-sbg:  #FFF;
-		}
-	</style>
 
-	<!-- Main -->
+	<!-- Reset -->
 	<style>
-		:root {
-			font-size: 1.25rem;
-		}
-
-		/* Reset all font modifications. */
 		* {
 			font-size: unset;
 			font-weight: unset;
 			font-style: unset;
+			line-height: unset;
 			text-decoration: unset;
-		}
-		html, body {
+			box-sizing: border-box;
 			padding: 0;
 			margin: 0;
 		}
+	</style>
 
-		/* Principle styling. */
-		* {
-			box-sizing: border-box;
+	<!-- Theme -->
+	<style>
+		:root {
+			--theme-logo: #FFF;
+			--theme-head: #CCC;
+			--theme-fore: #AAA;
+			--theme-back: #000;
+			--theme-link: #8E8;
+			--theme-sfg:  var(--theme-back);
+			--theme-sbg:  var(--theme-fore);
 		}
+	</style>
+
+	<!-- Font -->
+	<style>
+		:root {
+			font-family: "Liberation Mono", monospace, sans-serif;
+			font-size: 22px;
+			line-height: 1.5;
+		}
+		@media (max-width: 896px) { :root { font-size: 20px } }
+		@media (max-width: 768px) { :root { font-size: 18px } }
+		@media (max-width: 640px) { :root { font-size: 14px } }
+	</style>
+
+	<!-- Main -->
+	<style>
+		/* Principle styling. */
 		html, body {
-			background-color: var(--theme-bg);
-			color: var(--theme-fg);
+			background-color: var(--theme-back);
+			color: var(--theme-fore);
 		}
 		::selection {
 			background-color: var(--theme-sbg);
@@ -51,26 +61,33 @@
 			justify-content: center;
 		}
 		main {
-			font-family: "Liberation Mono", monospace, sans-serif;
-			font-size: 2ch;
-			line-height: 1.5;
-
+			--main-block: 5rem;
 			margin: 1ch;
 			max-width: 90ch;
+			margin-block-end: var(--main-block);
 		}
-		p, ul, ol, h1, h2, h3, h4, h5, h6 {
-			margin: 0 0;
-		}
+
 		h1, h2, h3, h4, h5, h6 {
-			margin-top: 1em;
+			color: var(--theme-head);
 			font-weight: bold;
+			margin-block: 2.5rem 0.5rem;
 		}
+		h1 { font-size: 2.0rem }
+		h2 { font-size: 1.8rem }
+		h3 { font-size: 1.5rem }
+		h4 { font-size: 1.2rem }
+		h5 { font-size: 1.1rem }
+		h6 { font-size: 1.0rem }
+
 		ul, ol {
 			padding: 0;
 			padding-left: 2ch;
 		}
 		ul {
 			list-style-type: square;
+		}
+		p + p {
+			margin-block-start: 1rem;
 		}
 		a {
 			color: var(--theme-link);
@@ -80,11 +97,11 @@
 		main {
 			display: grid;
 			grid-template-columns: 1fr auto;
-			grid-template-rows: 9ch 1fr;
+			grid-template-rows: var(--main-block) 1fr;
 			grid-template-areas:
 				"header  header"
 				"article nav";
-			gap: 1ch;
+			column-gap: 1ch;
 		}
 		header {grid-area:header}
 		article {grid-area:article}
@@ -110,10 +127,10 @@
 			height: 100%;
 			padding: 0;
 			margin: 0;
-			filter: drop-shadow(0 0 0.33ch var(--theme-fg));
+			filter: drop-shadow(0 0 0.33ch var(--theme-logo));
 		}
 		svg path {
-			fill: var(--theme-fg);
+			fill: var(--theme-logo);
 		}
 
 		/* Blinking cursor. */
@@ -147,24 +164,12 @@
 <main>
 	<header>
 		<svg class="header" version="1.1" viewBox="0 0 61 9" height="9" width="61" xmlns="http://www.w3.org/2000/svg">
+			<title>Logo with title Anaminus</title>
 			<path class="logo" d="M 2,1 V 2 H 1 V 5 H 2 V 8 H 3 V 7 H 4 V 8 H 5 V 5 H 6 V 2 H 5 V 1 H 4 V 2 H 3 V 1 Z M 2,3 H 3 V 4 H 2 Z M 4,3 H 5 V 4 H 4 Z"/>
 			<path class="title" d="m 8,1 v 1 h 3 V 1 Z m 3,1 V 4 H 8 V 2 H 7 V 8 H 8 V 5 h 3 v 3 h 1 V 2 Z m 2,1 v 5 h 1 V 5 h 1 V 4 H 14 V 3 Z m 2,2 v 1 h 1 V 5 Z m 1,1 v 1 h 1 v 1 h 1 V 3 h -1 v 3 z m 4,-3 v 1 h 3 V 3 Z m 3,1 V 5 H 20 V 4 h -1 v 4 h 1 V 6 h 3 v 2 h 1 V 4 Z m 2,-1 v 5 h 1 V 5 h 1 V 4 H 26 V 3 Z m 2,2 v 1 h 1 V 5 Z m 1,0 h 1 v 3 h 1 V 3 h -1 v 1 h -1 z m 3,-2 v 1 h 2 v 3 h -2 v 1 h 5 V 7 H 34 V 4 h 2 V 3 Z m 6,0 v 5 h 1 V 5 h 1 V 4 H 38 V 3 Z m 2,2 v 1 h 1 V 5 Z m 1,1 v 1 h 1 v 1 h 1 V 3 h -1 v 3 z m 3,-3 v 4 h 1 V 3 Z m 1,4 v 1 h 3 V 7 Z m 3,0 h 1 V 3 h -1 z m 3,-4 v 1 h 4 V 3 Z m 0,1 h -1 v 1 h 1 z m 0,1 v 1 h 3 V 5 Z m 3,1 v 1 h 1 V 6 Z m 0,1 h -4 v 1 h 4 z"/>
 			<path class="cursor" d="m 55,8 h 5 v 1 h -5 z"/>
 		</svg>
 	</header>
-	<nav>
-		<h2>Social</h2>
-		<table class="social">
-			<tr><td><a href="https://github.com/Anaminus">GitHub</a></td><td>Anaminus</td></tr>
-			<tr><td><a href="https://twitter.com/Anaminus">Twitter</a></td><td>@Anaminus</td></tr>
-			<tr><td><a href="https://bsky.app/profile/anaminus.bsky.social" rel="me">BlueSky</a></td><td>@anaminus</td></tr>
-			<tr><td><a href="https://mastodon.gamedev.place/@anaminus" rel="me">Mastodon</a></td><td>@anaminus</td></tr>
-			<tr><td><a href="https://discord.com/users/230986127459352576">Discord</a></td><td>_anaminus</td></tr>
-			<tr><td><a href="https://www.roblox.com/users/9201">Roblox</a></td><td>Anaminus</td></tr>
-			<tr><td><a href="https://devforum.roblox.com/u/anaminus">DevForum</a></td><td>Anaminus</td></tr>
-			<tr><td><a href="https://www.guilded.gg/u/anaminus">Guilded</a></td><td>Anaminus</td></tr>
-		</table>
-	</nav>
 	<article>
 		<h2>Projects</h2>
 		<ul>
@@ -200,6 +205,19 @@
 			</li>
 		</ul>
 	</article>
+	<nav>
+		<h2>Social</h2>
+		<table class="social">
+			<tr><td><a href="https://github.com/Anaminus">GitHub</a></td><td>Anaminus</td></tr>
+			<tr><td><a href="https://twitter.com/Anaminus">Twitter</a></td><td>@Anaminus</td></tr>
+			<tr><td><a href="https://bsky.app/profile/anaminus.bsky.social" rel="me">BlueSky</a></td><td>@anaminus</td></tr>
+			<tr><td><a href="https://mastodon.gamedev.place/@anaminus" rel="me">Mastodon</a></td><td>@anaminus</td></tr>
+			<tr><td><a href="https://discord.com/users/230986127459352576">Discord</a></td><td>_anaminus</td></tr>
+			<tr><td><a href="https://www.roblox.com/users/9201">Roblox</a></td><td>Anaminus</td></tr>
+			<tr><td><a href="https://devforum.roblox.com/u/anaminus">DevForum</a></td><td>Anaminus</td></tr>
+			<tr><td><a href="https://www.guilded.gg/u/anaminus">Guilded</a></td><td>Anaminus</td></tr>
+		</table>
+	</nav>
 </main>
 </body>
 </html>
